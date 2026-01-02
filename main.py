@@ -685,7 +685,7 @@ try:
                #url = requests.get(f'https://mon-key-3612a8154345.herokuapp.com/get_keys?url=https://cpvod.testbook.com/{CPVOD}/playlist.m3u8', headers={'x-access-token': 'eyJjb3Vyc2VJZCI6IjQ1NjY4NyIsInR1dG9ySWQiOm51bGwsIm9yZ0lkIjo0ODA2MTksImNhdGVnb3J5SWQiOm51bGx9r'}).json()['url']
 
 
-            elif 'khansirvod4.pc.cdn.bitgravity.com' in url:
+            if 'khansirvod4.pc.cdn.bitgravity.com' in url:
                parts = url.split('/')
                part1 = parts[1]
                part2 = parts[2]
