@@ -803,13 +803,6 @@ async def upload(bot: Client, m: Message):
                        f"✅𝗦𝗧𝗔𝗧𝗨𝗦 » 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗘𝗗`")
     await m.reply_text(f"<pre><code>📥𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤『{CR}』</code></pre>")
     await m.reply_text(f"<pre><code>『😏𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗞𝗼𝗻 𝗗𝗲𝗴𝗮😏』</code></pre>")
- # At the very end of main.py, replace:
-
-bot.run()
-if __name__ == "__main__":
-    asyncio.run(main())
-
-# With just:
-bot.run()
+ bot.run()
 
     
