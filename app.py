@@ -26,10 +26,10 @@ def run_web_server():
     app.run(host='0.0.0.0', port=port, debug=False)
 
 if __name__ == "__main__":
-    # Start bot in background thread
-    bot_thread = threading.Thread(target=run_bot, daemon=True)
-    bot_thread.start()
+    # Start Flask in background thread
+    web_thread = threading.Thread(target=run_web_server, daemon=True)
+    web_thread.start()
     
-    # Run Flask server in main thread
-    run_web_server()
+    # Run bot in main thread (IMPORTANT!)
+    run_bot()
     
