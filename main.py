@@ -819,7 +819,7 @@ async def upload(bot: Client, m: Message):
     """Function to start the bot"""
     print("🤖 Starting Telegram Bot...")
     
-    # ✅ Event loop create karein thread ke liye
+    # Event loop create karein
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     
