@@ -826,5 +826,13 @@ def run_bot():
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     
-    bot.run()
+    bot.start()
+    
+    # Keep thread alive
+    try:
+        loop.run_forever()
+    except KeyboardInterrupt:
+        print("Bot stopping...")
+    finally:
+        bot.stop()
     
