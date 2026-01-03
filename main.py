@@ -815,7 +815,9 @@ async def upload(bot: Client, m: Message):
     await m.reply_text(
         f"<pre><code>『😏𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗞𝗼𝗻 𝗗𝗲𝗴𝗮😏』</code></pre>"
     )
-
-
-# ================= BOT START =================
-bot.run()
+    # Add this at the bottom of main.py (after all handlers)
+def run_bot():
+    """Function to start the bot"""
+    print("🤖 Starting Telegram Bot...")
+    bot.run()
+    
