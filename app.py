@@ -1,7 +1,7 @@
 from flask import Flask
 import os
 import threading
-import main  # 👈 main.py import
+import main  # main.py import
 
 app = Flask(__name__)
 
@@ -14,9 +14,8 @@ def run_flask():
     app.run(host="0.0.0.0", port=port)
 
 if __name__ == "__main__":
-    # Flask server thread
-    t = threading.Thread(target=run_flask)
-    t.start()
+    # Flask server thread (PORT ke liye)
+    threading.Thread(target=run_flask).start()
 
-    # Telegram bot start
-    main.main()
+    # Bot already runs because main.py ke end me bot.run() hai
+    # Yahan kuch call karne ki zarurat nahi
