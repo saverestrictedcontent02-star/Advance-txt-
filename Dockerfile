@@ -27,4 +27,4 @@ RUN pip install pytube
 ENV COOKIES_FILE_PATH=youtube_cookies.txt
 
 # Start bot
-CMD ["python", "main.py"]
+CMD ["python", "app.py"]
