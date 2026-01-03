@@ -824,5 +824,3 @@ async def upload(bot: Client, m: Message):
     asyncio.set_event_loop(loop)
     
     bot.run()
-    
-    
