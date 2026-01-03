@@ -1,7 +1,7 @@
 from flask import Flask
 import os
 import threading
-import main  # main.py import
+import main  # main.py jisme bot.run() hai
 
 app = Flask(__name__)
 
@@ -9,13 +9,18 @@ app = Flask(__name__)
 def home():
     return "Bot is running"
 
-def run_flask():
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
+def run_bot():
+    # bot.run() main.py ke end me already hai
+    # sirf import kaafi hai, but safe call ke liye
+    pass
 
 if __name__ == "__main__":
-    # Flask server thread (PORT ke liye)
-    threading.Thread(target=run_flask).start()
+    # 🔥 FIRST: Flask must start immediately
+    port = int(os.environ.get("PORT", 10000))
+    threading.Thread(
+        target=lambda: app.run(host="0.0.0.0", port=port),
+        daemon=True
+    ).start()
 
-    # Bot already runs because main.py ke end me bot.run() hai
-    # Yahan kuch call karne ki zarurat nahi
+    # 🔥 SECOND: Start Telegram bot (blocking)
+    main.bot.run()
