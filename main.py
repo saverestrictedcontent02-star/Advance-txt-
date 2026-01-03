@@ -822,17 +822,6 @@ def run_bot():
     """Function to start the bot"""
     print("🤖 Starting Telegram Bot...")
     
-    import asyncio
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    
-    bot.start()
-    
-    # Keep thread alive
-    try:
-        loop.run_forever()
-    except KeyboardInterrupt:
-        print("Bot stopping...")
-    finally:
-        bot.stop()
+    # Use bot.run() directly - Pyrogram handles everything
+    bot.run()
     
